@@ -1,0 +1,19 @@
+version: 1
+disable_existing_loggers: true
+
+formatters:
+    standard:
+        format: "%(asctime)s - %(name)s - %(message)s"
+        datefmt: '%Y-%m-%d'
+
+handlers:
+    default:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: standard
+        stream: ext://sys.stdout
+
+loggers: 
+    '':
+      handlers: ['default']
+      level: DEBUG
